@@ -27,7 +27,7 @@ How to find the IIIF Manifest of an item in the Internet Archive?
 - Add the id to the following pattern: `https://iiif.archive.org/iiif/{id}/manifest.json`
   - E.g. `https://iiif.archive.org/iiif/map2002023007/manifest.json`
 
-💡You can use [this bookmarklet](https://iiif-bookmarklets.netlify.app/collections/internet-archive/) to quickly open the IIIF Manifest of an item in the Internet Archive.
+💡You can use [this bookmarklet](https://iiif-bookmarklets.netlify.app/collections/internet-archive/) to quickly open the IIIF Manifest of an item in the Internet Archive and [this bookmarklet](https://iiif-bookmarklets.netlify.app/tools/allmaps/) to open the current browser address in the Allmaps Editor.
 
 ❗Allmaps does not currently support IIIF Collection Manifests
 
@@ -76,3 +76,16 @@ How to find the IIIF Manifest of an item in the Internet Archive?
 - If you like to improve your work, you can go back to the editor to do so (browser back, or navigate to the tab). You can leave the Viewer tab open and reload the page to see the results.
 
 ## Step 5 (extra): Annotating maps with geojson.io
+
+- In order to add the map as a layer in geojson.io (and also in GIS-applications), you need to use the Allmaps Tile Server. The Tile Server acts as a proxy server to translate IIIF images to [XYZ map tiles](https://en.wikipedia.org/wiki/Tiled_web_map), using the georeferencing annotation.
+- There're three ways to generate the URL template for XYZ map tiles:
+  - Copy the XYZ link at the bottom of the `Results` tab of the Allmaps Editor.
+  - Follow the [Tile Server instructions](https://observablehq.com/@bertspaan/allmaps-tile-server) and click the `Copy URL template to clipboard` button
+  - Copy the URL to the georeferencing annotation (see previous section) and place it after `=` in the following URL: `https://allmaps.xyz/{z}/{x}/{y}.png?url=`
+- Go to the [geojson](http://geojson.io) editor
+- Click `Meta` and `Add raster tile layer` in the top menu. Paste the URL template and give the layer a name. Navigate the map to see the result (it won't do this automatically). At the bottom right, a checkbox appears to hide/show the layer
+- You can repeat these steps to add another layer
+- In the geojson.io editor you can add markers, rectangles, polygons and polylines (see the tool palette). You can also edit and delete features by using the buttons at the bottom of the tool palette (follow the on-screen instructions).
+- When you click a feature, you can edit its metadata in a popup panel. Each row in the table represents a label-value pair: labels left and values right. You can add a new pair by adding a new row.
+
+❗You can also load XYZ maps in [Placemark](https://app.placemark.io/play). This app supports the TileJSON format which can be requested by using the following pattern: `https://allmaps.xyz/tiles.json?url=`.
