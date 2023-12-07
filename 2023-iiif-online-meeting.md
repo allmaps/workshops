@@ -19,6 +19,7 @@ Some collections of interest:
 - [Getty Research Institute](https://archive.org/details/getty)
 - [Smithsonian Libraries and Archives](https://archive.org/details/smithsonian)
 - [Digital Piranesi](https://archive.org/details/digital-piranesi-v17)
+- [David Rumsey Map Collection](https://archive.org/details/david-rumsey-map-collection) (Please note that the images on the [David Rumsey website](https://www.davidrumsey.com/) have a higher resolution than those in the Internet Archive and also support IIIF.)
 
 How to find the IIIF Manifest of an item in the Internet Archive?
 
