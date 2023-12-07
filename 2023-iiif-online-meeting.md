@@ -47,6 +47,8 @@ Following the exciting news about the collaboration between the IA and IIIF Cons
  - Press `B` or use the right wheel to remove the background color
  - Press `M` to show the outline of the mask
  - Press `T` to change the transformation algorithm
+ - In case of multiple maps use `[` and `]` to browse the collection (the selected map will be on top)
+ - Right click a map to change the layer order
 
 💡 The copy/paste method serves to demonstrate how Allmaps works on the basis of Georeference Annotations. An easier way is to navigate to the `Results` tab and open one of the links.
 
