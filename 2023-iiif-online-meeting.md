@@ -10,6 +10,27 @@ Following the exciting news about the collaboration between the IA and IIIF Cons
 
 ## Step 1: Finding Maps in the Internet Archive
 
+As of September 2023 the IIIF API of the [Internet Archive](https://archive.org/) was upgraded in collaboration with the IIIF Consortium. The implementation is still under development and some items might throw an error when opening them in Allmaps. Please notify us when this happens and we'll make sure to investigate and publish a fix when possible.
+
+Some collections of interest:
+
+- [Center for Sacramento History](https://archive.org/details/cshmaps)
+- [United States Geological Survey](https://archive.org/details/maps_usgs)
+- [Getty Research Institute](https://archive.org/details/getty)
+- [Smithsonian Libraries and Archives](https://archive.org/details/smithsonian)
+- [Digital Piranesi](https://archive.org/details/digital-piranesi-v17)
+
+How to find the IIIF Manifest of an item in the Internet Archive?
+
+- Locate the id in the URL: `https://archive.org/details/{id}/`
+  - In the URL `https://archive.org/details/map2002023007/` the id is `map2002023007`
+- Add the id to the following pattern: `https://iiif.archive.org/iiif/{id}/manifest.json`
+  - E.g. `https://iiif.archive.org/iiif/map2002023007/manifest.json`
+
+💡You can use [this bookmarklet](https://iiif-bookmarklets.netlify.app/collections/internet-archive/) to quickly open the IIIF Manifest of an item in the Internet Archive.
+
+❗Allmaps does not currently support IIIF Collection Manifests
+
 ## Step 2: Georeferencing Maps in the Allmaps Editor
 
 - Copy the URL of the IIIF manifest
@@ -42,13 +63,13 @@ Following the exciting news about the collaboration between the IA and IIIF Cons
 ## Step 4: Opening a Georeference Annotation in the Allmaps Viewer
 
 - Go back to the Editor and click `Copy` in the `</>` panel.
-- Navigate (in a new tab) to the [Allmaps Viewer](https://viewer.allmaps.org/), paste the Georeference Annotation in the second field and click `View`. The georeferenced map will now open in the Allmaps Viewer. You can go back and forth between the original image and warped map by clicking the buttons in the top right corner. If the IIIF manifest contains multiple images and if more than one were georeferenced (and exported), all images are rendered at once.
- - Hold space to quickly hide the map
- - Press `B` or use the right wheel to remove the background color
- - Press `M` to show the outline of the mask
- - Press `T` to change the transformation algorithm
- - In case of multiple maps use `[` and `]` to browse the collection (the selected map will be on top)
- - Right click a map to change the layer order
+- Navigate (in a new tab) to the [Allmaps Viewer](https://viewer.allmaps.org/), paste the Georeference Annotation in the second field and click `View`. The georeferenced map will now open in the Allmaps Viewer. You can go back and forth between the original image and warped map by clicking the buttons in the top right corner. If the IIIF manifest contains multiple images and if more than one were georeferenced (and exported), all images are rendered at once. Some tricks:
+  - Hold space to quickly hide the map
+  - Press `B` or use the right wheel to remove the background color
+  - Press `M` to show the outline of the mask
+  - Press `T` to change the transformation algorithm
+  - In case of multiple maps use `[` and `]` to browse the collection (the selected map will be on top)
+  - Right click a map to change the layer order
 
 💡 The copy/paste method serves to demonstrate how Allmaps works on the basis of Georeference Annotations. An easier way is to navigate to the `Results` tab and open one of the links.
 
