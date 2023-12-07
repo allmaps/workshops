@@ -27,7 +27,7 @@ How to find the IIIF Manifest of an item in the Internet Archive?
 - Add the id to the following pattern: `https://iiif.archive.org/iiif/{id}/manifest.json`
   - E.g. `https://iiif.archive.org/iiif/map2002023007/manifest.json`
 
-💡You can use [this bookmarklet](https://iiif-bookmarklets.netlify.app/collections/internet-archive/) to quickly open the IIIF Manifest of an item in the Internet Archive and [this bookmarklet](https://iiif-bookmarklets.netlify.app/tools/allmaps/#allmaps-editor) to open the current browser address in the Allmaps Editor. Use those two in sequence.
+💡You can use [this bookmarklet](https://iiif-bookmarklets.netlify.app/collections/internet-archive/) to quickly open the IIIF Manifest of an item in the Internet Archive and [this bookmarklet](https://iiif-bookmarklets.netlify.app/tools/allmaps/#allmaps-editor) to open the current browser address in the Allmaps Editor. Use those two in sequence. Alternatively, you can use [this form](https://dev.docs.allmaps.org/guides/finding-maps/) on the Allmaps documentation site (which is still in development).
 
 ❗Allmaps does not currently support IIIF Collection Manifests
 
