@@ -1,20 +1,55 @@
 # Georeferencing the Internet Archive with Allmaps
-Thursday, December 07, 2023
-
-5:00 PM - 5:30 PM CET
+Thursday, December 07, 2023, 5:00 PM - 5:30 PM CET
 
 Jules Schoonman & Bert Spaan
+
+[2023 Online Meeting, IIIF Consortium](https://iiif.io/event/2023/online-meeting/)
 
 ## Abstract
 Following the exciting news about the collaboration between the IA and IIIF Consortium, this workshop explores the possibilities of annotating IA material using the Allmaps platform. We will locate relevant collections and resources in the IA, and open them in the Allmaps Editor using the available IIIF Manifest URIs. We'll look at the format of a Georeference Annotation and demonstrate its usages in the Allmaps Viewer and other tools. When working with open data that is not yet available elsewhere with IIIF, the IA can thus serve as a repository to launch geospatial research projects. This workshop will give you everything you need to get started–and the approach can be replicated for other IIIF content as well. When we run into problems, we'll create issues in the relevant repositories to help the development of both Allmaps and IA's IIIF implementation.
 
-## Step 1: Finding Maps
+## Step 1: Finding Maps in the Internet Archive
 
 ## Step 2: Georeferencing Maps in the Allmaps Editor
 
+- Copy the URL of the IIIF manifest
+- Open the [Allmaps Editor](https://editor.allmaps.org)
+- Paste the link in the field and click `Load`. At the top you now see four tabs (you can always go back and forth). If you get an error message, double check if you copied the right link.
+- Select an image under the `Collection` tab (often there's only a single image to select). The two icons indicate whether a map already contains a mask and/or control points.
+- Click the `Mask` tab and draw a mask by zooming in and clicking the image. The mask will be used to crop the map in the viewer. If you want to start again, click the middle button of the menu on the bottom right. This opens up a panel listing all masks; click the bin to remove one (there's no way to undo this currently). You can move points around or add new points to the mask by dragging points or lines. You can also remove a point by clicking it while holding shift.
+
+❗If you accidentally create a second mask, you can quickly change tabs (to `Collection` and back) to remove it again.
+  
+- Now go to the `Georeference` tab. On the left you see the selected image, on the right a world map. Zoom to the region of the map on the right. Click a point you recognise on both maps (which has remained the same over time), such as a church tower or a road crossing. Add the point on both sides (a number will indicate that they are paired). Add at least **three** of these points (they are called *control points*) and try to spread them as much as possible. If you unfold the layers panel (middle button of the menu) you obtain an overview of your mask and the control points. You can remove points if needed (there's no undo function yet). You can also select another mask and add points for that selection.
+
+❗Removing points from the menu might confuse the numbering. Reload the page to reset the numbering. Note that the order of numbers could change after reloading the page.
+
+💡You can rotate the view by holding Option/Alt-Shift.
+
+💡You can load a custom reference map by following the instructions in [this Observable Notebook](https://observablehq.com/d/f97e823615ea778c).
+
 ## Step 3: What is a Georeference Annotation?
+
+- After finishing Step 2, Open the `</>` panel on the bottom right.
+- Next to `Show annotation for:` you can choose between `Manifest`, `Image`, `Map`.
+  - `Map` refers to the current selected mask (and related control points)
+  - `Image` refers to all the masks (and related control points) of the currently selected image
+  - `Manifest` refers to all the masks (and related control points) of all the images in the current IIIF Manifest (see the overview in the `Collection` tab).
+- Select `Map` and click `Open in new tab`. You now see a json document that (almost 😅) conforms to the specifications of the [Georeference Extension](https://iiif.io/api/extension/georef/). We'll explain the different parts to make you familiar with the structure.
+ 
+❗The Allmaps Editor currently stores the annotations for you. If someone else opens the same map, they can alter the annotation. It is therefore wise to save a copy of your data on your hard drive or elsewhere. The Editor does not yet support loading custom annotations, but the Allmaps Viewer does.
 
 ## Step 4: Opening a Georeference Annotation in the Allmaps Viewer
 
-## Step 5 (extra): Annotating maps with geojson.io
+- Go back to the Editor and click `Copy` in the `</>` panel.
+- Navigate (in a new tab) to the [Allmaps Viewer](https://viewer.allmaps.org/), paste the Georeference Annotation in the second field and click `View`. The georeferenced map will now open in the Allmaps Viewer. You can go back and forth between the original image and warped map by clicking the buttons in the top right corner. If the IIIF manifest contains multiple images and if more than one were georeferenced (and exported), all images are rendered at once.
+ - Hold space to quickly hide the map
+ - Press `B` or use the right wheel to remove the background color
+ - Press `M` to show the outline of the mask
+ - Press `T` to change the transformation algorithm
 
+💡 The copy/paste method serves to demonstrate how Allmaps works on the basis of Georeference Annotations. An easier way is to navigate to the `Results` tab and open one of the links.
+
+- If you like to improve your work, you can go back to the editor to do so (browser back, or navigate to the tab). You can leave the Viewer tab open and reload the page to see the results.
+
+## Step 5 (extra): Annotating maps with geojson.io
