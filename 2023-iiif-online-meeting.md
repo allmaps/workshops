@@ -72,9 +72,19 @@ How to find the IIIF Manifest of an item in the Internet Archive?
   - In case of multiple maps use `[` and `]` to browse the collection (the selected map will be on top)
   - Right click a map to change the layer order
 
-💡 The copy/paste method serves to demonstrate how Allmaps works on the basis of Georeference Annotations. An easier way is to navigate to the `Results` tab and open one of the links.
+💡 The copy/paste method serves to demonstrate how Allmaps works on the basis of Georeference Annotations. An easier way is to navigate to the `Results` tab and open one of the links. In this case, the annotation is loaded from Allmaps' database directly. This means that new edits in the Editor will become visible in the Viewer after refreshing the page. You can leave both tabs open to improve your work.
 
-- If you like to improve your work, you can go back to the editor to do so (browser back, or navigate to the tab). You can leave the Viewer tab open and reload the page to see the results.
+💡 You can also use the following method to see if annotation exists of a certain manifest:
+
+- Copy the IIIF manifest link
+- Open this URL: [https://annotations.allmaps.org/?url=](https://annotations.allmaps.org/?url=)
+- Paste the IIIF manifest link after `?url=` in the browser address bar and press enter
+
+(There's also a [bookmarklet](https://iiif-bookmarklets.netlify.app/tools/allmaps/#allmaps-annotation) for that.)
+
+Or you can load a Manifest URL directly in the Allmaps Viewer.
+
+❗Allmaps references Manifests by using a hash of the Manifest ID property. This can be different from the URL. In the case of the Internet Archive, the ID of `https://iiif.archive.org/iiif/3/postofficemanual00unit/manifest.json` is `https://iiif.archive.org/iiif/postofficemanual00unit/manifest.json` (without the `3/` in the URL). This might explain why the Allmaps Viewer cannot find an annotation for a certain IIIF Manifest URL.
 
 ## Step 5 (extra): Annotating maps with geojson.io
 
