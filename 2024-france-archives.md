@@ -46,22 +46,20 @@ Here are some tips:
 Once we find a map, we need to find the **URL of it's IIIF Manifest** (or IIIF Image). This URL is how we will point Allmaps to the map in question.
 
 To locate the IIIF Manifest URL, there are a couple of options. Use the one that works best for you.
-- Some archive platforms make it easy by providing the **URL on the platform webpage** of the map ([example](https://images-archives.ille-et-vilaine.fr/archives/item/103954-4j-guingamp-7)), or **in the interactive viewer** ([example](https://gallica.bnf.fr/ark:/12148/btv1b53029493h.r=carte%20bretagne?rk=64378;0): under the `iiif` logo, then under `i`). In general, look out for the IIIF logo or the words 'IIIF Manifest' <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png" width="20">, sometimes within the 'share' or 'information' menu.
-- In the **FranceArchives** platform the items are visible by default in the **Mirador Viewer**, which enables to find the IIIF Manifest URL as follows: click the `≡` button called `Aficher le menu latéral` and in the `i` panel scroll down to the bottom to find `Liens: Manifeste IIIF`.
-- To automatically detect IIIF resources on any platform website or viewer you visit, you can use the very helpful '**detektIIIF**' browser extension. When visiting a webpage or viewer containing a IIIF Manifest, this extension will automatically find the IIIF Manifest URL. It's available one the [Chrome webstore](https://chromewebstore.google.com/detail/detektiiif3/aaodcobgcadinjipaocibamdfcffpcpp) and as a [Firefox Add-on](https://addons.mozilla.org/en-GB/firefox/addon/detektiiif2/). If you want to use it, install the extension and pin it in your browser for easy access. 
-- For some archive platforms (namely those that use Arkhênum - Limb Gallery software), we can **deduce the IIIF Manifest URL** from the platform webpage or viewer webpage by locating its id. Here are two examples:
-  - For the map at this viewer URL `https://archives-numeriques.ville-bazas.fr/viewer/9038/?offset=#page=1&viewer=picture&o=&n=0&q=` we can find the id `9038` in the URL and construct the IIIF Manifest URL `https://archives-numeriques.ville-bazas.fr/iiif/9038/manifest`
-  - For the map at this webpage URL `https://images-archives.ille-et-vilaine.fr/idurl/1/103954` we can find the id `103954` in the URL and construct the IIIF Manifest URL `https://images-archives.ille-et-vilaine.fr/iiif/103954/manifest`
+- Some archive platforms make it easy by providing the URL **on the item webpage** of the map, or **in the interactive viewer**. In general, look out for the IIIF logo or the words 'IIIF Manifest' <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png" width="20">, sometimes within the 'share' or 'information' menu.
+  - Example from Ille-et-Vilaine: [IIIF Manifest URL on the item webpage](https://images-archives.ille-et-vilaine.fr/archives/item/103954-4j-guingamp-7).
+  - Example from **BnF**: [IIIF Manifest URL in the interactive viewer](https://gallica.bnf.fr/ark:/12148/btv1b53029493h.r=carte%20bretagne?rk=64378;0) under the `iiif` logo, then under `i`.
+  - From the **FranceArchives** platform the items are visible by default in the (embedded) **Mirador Viewer**, which allows to find the IIIF Manifest URL as follows: click the `≡` button called `Aficher le menu latéral` and in the `i` panel scroll down to the bottom to find `Liens: Manifeste IIIF`.
+- For all archives from our list (except BnF) we can **deduce the IIIF Manifest URL** from the URL of the item webpage or interactive viewer of an archive item, by locating the item's 'id'.
+  - Here are two examples:
+    - For the map at this viewer URL `https://archives-numeriques.ville-bazas.fr/viewer/9038/?offset=#page=1&viewer=picture&o=&n=0&q=` we can find the id `9038` in the URL and construct the IIIF Manifest URL `https://archives-numeriques.ville-bazas.fr/iiif/9038/manifest`
+    - For the map at this webpage URL `https://images-archives.ille-et-vilaine.fr/idurl/1/103954` we can find the id `103954` in the URL and construct the IIIF Manifest URL `https://images-archives.ille-et-vilaine.fr/iiif/103954/manifest`
+  - We can **do this automatically** using a **bookmarklet** (a bookmark with a small bit of code): drag <a href="javascript:(function(){const regexPattern=/http.*:\/\/(?%3Cbase%3E.*?)\/(idurl\/\w*\/|viewer\/|collection\/item\/|records\/item\/)(?%3Cid%3E\w*)/;const%20matches=window.location.href.match(regexPattern).groups;const%20manifestUrl=%27https://%27+matches.base+%27/iiif/%27+matches.id+%27/%27+%27manifest%27;location=manifestUrl})();">this link</a> to your bookmarks bar. It acts as a button: when clicked it will try to deduce the IIIF Manifest URL from the webpage you are currently at. Try to click it when you have a IIIF item webpage or viewer open: it should bring you to its corresponding IIIF Manifest URL! (You can find more information on this bookmarklet [here](https://iiif-bookmarklets.netlify.app/collections/limb-gallery-viewer/))
+- To automatically detect IIIF resources on any platform website or viewer you visit, even outside of our list, you can use the very helpful '**detektIIIF**' browser extension. When visiting a webpage or viewer containing a IIIF Manifest, this extension will automatically find the IIIF Manifest URL. It's available one the [Chrome webstore](https://chromewebstore.google.com/detail/detektiiif3/aaodcobgcadinjipaocibamdfcffpcpp) and as a [Firefox Add-on](https://addons.mozilla.org/en-GB/firefox/addon/detektiiif2/). If you want to use it, install the extension and pin it in your browser for easy access. 
 
-<!-- > [!TIP] Bookmarklet 
+<!-- > 💬 **No Collection Manifests**
 > 
-> Deducing the IIIF Manifest url can be done automatically via this bookmarklet. -->
-
-<!-- 💡You can use [this bookmarklet](https://iiif-bookmarklets.netlify.app/collections/internet-archive/) to quickly open the IIIF Manifest of an item in the Internet Archive and [this bookmarklet](https://iiif-bookmarklets.netlify.app/tools/allmaps/#allmaps-editor) to open the current browser address in the Allmaps Editor. Use those two in sequence. Alternatively, you can use [this form](https://dev.docs.allmaps.org/guides/finding-maps/) on the Allmaps documentation site (which is still in development). -->
-
-> 💬 **No Collection Manifests**
-> 
-> Allmaps does not currently support IIIF Collections.
+> Allmaps does not currently support IIIF Collections. -->
 
 > ℹ️ **The difficulty of finding IIIF Manifests URLs**
 > 
