@@ -93,7 +93,7 @@ Now that we have found a map in a partner archive, and identified the IIIF Manif
 - 🙅 Removing points from the menu might confuse the numbering. Reload the page to reset the numbering. Note that the order of numbers changes after reloading the page.
 - ↗️ You can rotate the view by holding Option/Alt-Shift.
 - 🗺️ It will soon be possible to load a custom world map to help you place the control points. Advanced: If you want to try this out now, you can do this via a bookmarklet:
-  - Drag the following link to you Bookmarks bar: <a href="[1]:javascript:(function()%7BsetUserBaseMapUrl('https://tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png')%7D)()
+  - Drag the following link to you Bookmarks bar: <a href="javascript:(function()%7BsetUserBaseMapUrl('https://tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png')%7D)()
 ">Allmaps Editor: OpenStreetMap background</a>
   - While in the Allmaps Editor, click this bookmark. You will see the background change to OpenStreetMap
 
