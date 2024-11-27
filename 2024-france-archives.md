@@ -34,7 +34,7 @@ Now it's up to you: browse these archives and find a map you like!
 Here are some tips:
 - Use search terms like 'map', 'carte', 'geo', 'photo aérienne', 'cadastre', 'plan', ...
 - See if the platform offers to search by categories, and if there is a category for or related to 'maps'.
-- You can also search through the [FranceArchive search](https://francearchives.gouv.fr/fr/advancedSearch). It allows users to search items in all partner archives at once, and indicates IIIF Manifests with the IIIF logo. However, you might also find maps from archives whose portals don't work with Allmaps.
+- You can also search through the [FranceArchive search](https://francearchives.gouv.fr/fr/advancedSearch) (IIIF Manifests indicated with the IIIF logo) or [Biblissima+ search](https://portail.biblissima.fr/). These allow users to search items in all partner archives at once. However, you might also find maps from archives whose portals don't work with Allmaps. See the note on dealing with error further.
 
 > ℹ️ **Sharing maps during the workshop**
 >
@@ -74,6 +74,12 @@ Now that we have found a map in a partner archive, and identified the IIIF Manif
 - Open the [Allmaps Editor](https://editor.allmaps.org)
 - Paste the link in the field and click `Load`. At the top you now see four tabs (you can always go back and forth). 
 - ❗ If you get an error message, double check if you copied the right link.
+
+> ℹ️ **Dealing with error messages**
+> 
+> For some maps of archives outside those proposed in the list above, you might see an error when entering the IIIF Manifest URL in the Allmaps Editor, e.g. `failed to fetch`.
+> 
+> Sometimes this is due to the fact that Allmaps Editor doesn't (yet) support all possible implementations of IIIF Manifests, ... as specified by the [IIIF Presentation API](https://iiif.io/api/presentation/3.0/). In other cases, it's only a question of [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) not being enabled (i.e. the server hosting the image has not allowed other servers, in this case Allmaps Editor, to load the image). If you would really like to use this map in Allmaps, you can try to find out if this is indeed the problem by circumventing it e.g. using an 'Allow CORS' plugin for your browser. Raise your hand if you want help trying this out.
 
 ### Select the right Map
 - Select an image under the `Collection` tab (often there's only a single image to select). 
