@@ -28,7 +28,7 @@ Allmaps omvat meerdere tools. De belangrijkste voor ons zijn:
 - **Allmaps Editor**: hiermee kunnen IIIF-kaarten, aangeduid via hun IIIF Manifest, gegeorefereerd worden. Aan de hand van deze applicatie kunnen we dus Georeferentie Annotaties maken of bewerken ('editeren', vandaar de naam).
 - **Allmaps Viewer**: hiermee kunnen Georeferentie Annotaties worden weergegeven. Deze applicatie leest de controle punten en het masker, vraagt de nodige delen van de afbeelding op via het IIIF Manifest, en geeft de afbeelding vervormd weer op een interactieve kaart.
 
-Er zijn nog andere Allmaps tools die je kan ontdekken op [allmaps.org](https://allmaps.org/). Zo is er bijvoorbeeld [Allmaps Here](https://here.allmaps.org/) dat op basis van je GPS locatie reeds gegeorefereerde kaarten uit je buurt voorstelt en je locatie erop aanduidt. In de toekomst bouwen we ook [Allmaps Explore](https://explore.allmaps.org/) verder uit: een tool om doorheen alle gegeorefereerde kaarten te zoeken.
+Er zijn nog andere Allmaps tools die je kan ontdekken op [allmaps.org](https://allmaps.org/). Zo is er bijvoorbeeld [Allmaps Here](https://here.allmaps.org/) dat op basis van je GPS locatie reeds gegeorefereerde kaarten uit je buurt voorstelt en je locatie erop aanduidt. In de toekomst bouwen we ook [Allmaps Explore](https://dev.explore.allmaps.org/) verder uit: een tool om doorheen alle gegeorefereerde kaarten te zoeken.
 
 ## Een kaart georefereren in Allmaps Editor
 
