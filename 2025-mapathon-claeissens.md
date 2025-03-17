@@ -1,10 +1,12 @@
 # Mapathon 1571 - verbind het Brugse Vrije met vandaag
 
-> 14 en 15 maart, 2024
+> 14 en 15 maart, 2025
 > 
 > Stadsarchief Brugge
+>
+> Volg deze handleiding digitaal op: [pages.allmaps.org/workshops](https://pages.allmaps.org/workshops) en klik op '2025 Mapathon Claeissens'
 > 
-> [mappingpourbus.ugent.be](https://mappingpourbus.ugent.be)
+> Meer informatie over de Mapathon: [mappingpourbus.ugent.be](https://mappingpourbus.ugent.be)
 
 ## Over deze workshop
 
