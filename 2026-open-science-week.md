@@ -3,6 +3,38 @@ title: Get ready to use IIIF and Allmaps
 description: Open Science Week 2026 workshop
 ---
 
+<style>
+.callout {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 0.25rem solid #6a737d;
+  border-radius: 0.25rem;
+  background: #f6f8fa;
+}
+
+.callout > :first-child {
+  margin-top: 0;
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.callout-title {
+  font-weight: 700;
+}
+
+.callout-note {
+  border-left-color: #0969da;
+  background: #f6f8ff;
+}
+
+.callout-caution {
+  border-left-color: #cf222e;
+  background: #fff5f5;
+}
+</style>
+
 Workshop [Get ready to use IIIF and Allmaps](https://www.tudelft.nl/en/events/2026/open-science/get-ready-to-use-iiif-and-allmaps), Sep 14 2026, TU Delft Library.
 
 _NB: This guide will be published as part of the [Allmaps documentation](https://allmaps.org/docs/introduction)._
@@ -22,28 +54,29 @@ Allmaps takes a different approach: it works with IIIF resources which are hoste
 - Open [Allmaps Editor](https://editor.allmaps.org)
 - Paste the URL to a IIIF resource in the input field and press enter. You can also pick a map from one of the partner institutions listed further down the page.
 
-> [!NOTE]
-> **Supported resources**
->
-> Allmaps Editor currently supports the following IIIF resources:
->
-> - [IIIF Manifest](https://iiif.io/api/presentation/3.0/#52-manifest) (version 2 or 3). A IIIF resource containing canvases with painting annotations.
-> - [IIIF Collection](https://iiif.io/api/presentation/3.0/#51-collection) (version 2 or 3). This is a special type of manifest containing references to other IIIF Collections or Manifests.
-> - [IIIF Image](https://iiif.io/api/image/3.0/) (version 1, 2 or 3). When loading a IIIF Image URL directly you might need to append `/info.json` to the URL. Please note that no metadata will be available when loading images.
-> - Georeference Annotation URLs served by Allmaps. These start with `https://annotations.allmaps.org`.
+<aside class="callout callout-note" role="note">
+  <p class="callout-title">Note: Supported resources</p>
+  <p>Allmaps Editor currently supports the following IIIF resources:</p>
+  <ul>
+    <li><a href="https://iiif.io/api/presentation/3.0/#52-manifest">IIIF Manifest</a> (version 2 or 3). A IIIF resource containing canvases with painting annotations.</li>
+    <li><a href="https://iiif.io/api/presentation/3.0/#51-collection">IIIF Collection</a> (version 2 or 3). This is a special type of manifest containing references to other IIIF Collections or Manifests.</li>
+    <li><a href="https://iiif.io/api/image/3.0/">IIIF Image</a> (version 1, 2 or 3). When loading a IIIF Image URL directly you might need to append <code>/info.json</code> to the URL. Please note that no metadata will be available when loading images.</li>
+    <li>Georeference Annotation URLs served by Allmaps. These start with <code>https://annotations.allmaps.org</code>.</li>
+  </ul>
+</aside>
 
 - At the top you now see four tabs: **Images**, **Draw mask**, **Georeference** and **Results**. You can always go back and forth between them. If instead you receive an error message, double check if you copied the correct link.
 
-> [!CAUTION]
-> **Dealing with error messages**
->
-> Sometimes opening a valid IIIF Manifest URL might still throw an error. This could be caused by various issues, such as:
->
-> - The IIIF Manifest is not (yet) supported by Allmaps. For example, a Manifest containing a `choice` property will not be loaded.
-> - The IIIF Manifest is invalid. In this case, the parser will indicate which properties fail to follow the IIIF specifications.
-> - The IIIF Manifest cannot be loaded due to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) restrictions (i.e. the server hosting the Manifest has not allowed other domains, in this case Allmaps Editor, to load the resource). Some manifests that fail to load in Allmaps might still load in other IIIF Viewers.
->
-> If you think Allmaps should support the Manifest, please [file an issue here](https://github.com/allmaps/allmaps), or contact us by email or through the [IIIF Slack](https://iiif.io/community/). If you think the loaded Manifest is incorrect, contact the content provider and aks them to improve their services. If the error message is unclear, contact us for a more detailed explanation.
+<aside class="callout callout-caution" role="note">
+  <p class="callout-title">Caution: Dealing with error messages</p>
+  <p>Sometimes opening a valid IIIF Manifest URL might still throw an error. This could be caused by various issues, such as:</p>
+  <ul>
+    <li>The IIIF Manifest is not (yet) supported by Allmaps. For example, a Manifest containing a <code>choice</code> property will not be loaded.</li>
+    <li>The IIIF Manifest is invalid. In this case, the parser will indicate which properties fail to follow the IIIF specifications.</li>
+    <li>The IIIF Manifest cannot be loaded due to <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> restrictions (i.e. the server hosting the Manifest has not allowed other domains, in this case Allmaps Editor, to load the resource). Some manifests that fail to load in Allmaps might still load in other IIIF Viewers.</li>
+  </ul>
+  <p>If you think Allmaps should support the Manifest, please <a href="https://github.com/allmaps/allmaps">file an issue here</a>, or contact us by email or through the <a href="https://iiif.io/community/">IIIF Slack</a>. If you think the loaded Manifest is incorrect, contact the content provider and aks them to improve their services. If the error message is unclear, contact us for a more detailed explanation.</p>
+</aside>
 
 - Select an image under the Images tab (often there's only a single image to select).
 - There could be one or two icons beneath the map, indicating whether a map has already been georeferenced. A green map icon indicates that one or more maps have been georeferenced for that image. If the georeferencing process was not completed, this is indicated by a yellow warning symbol; this means you can improve and complete the work!
@@ -53,39 +86,37 @@ Allmaps takes a different approach: it works with IIIF resources which are hoste
 
 - Click the **Draw mask** tab. The mask specifies the cartographic part of the image. It will later be used to crop the map in the results tab and Allmaps Viewer. Draw a mask around the part of the image where the map is located. Start by zooming in and clicking on the image. Don’t worry if you made a mistake: you can correct the mask later.
 
-> [!NOTE]
-> **Which mask?**
->
-> Some maps have clear frames, others not so much. Try to include as much cartographic information as possible within the boundaries of the mask, including labels, but remove non-cartographic elements such as ornamentation, rims or legends. In the end, there is no "correct" mask and where you draw it depends on your interests and how you want to use the map. Fortunately, you can always go back and change the mask in Allmaps, or even create multiple masks for the same image, in case it contains additional inset maps, for example.
+<aside class="callout callout-note" role="note">
+  <p class="callout-title">Note: Which mask?</p>
+  <p>Some maps have clear frames, others not so much. Try to include as much cartographic information as possible within the boundaries of the mask, including labels, but remove non-cartographic elements such as ornamentation, rims or legends. In the end, there is no "correct" mask and where you draw it depends on your interests and how you want to use the map. Fortunately, you can always go back and change the mask in Allmaps, or even create multiple masks for the same image, in case it contains additional inset maps, for example.</p>
+</aside>
 
 - Finish the mask by clicking the Finish button or its start point. You can also remove the mask by clicking Cancel or pressing `esc`.
 - After finishing the mask, you can move points around or add new points to the mask by clicking and dragging points or lines. You can also remove a point by right clicking it.
 - If you want to remove a mask and start over, click the **Maps** button on the bottom right of the window. This opens up a panel listing all masks; click the bin to remove the mask.
 
-> [!CAUTION]
-> **Your data in Allmaps**
->
-> Edits in Allmaps Editor are automatically stored in the Allmaps database. They are licensed [CC0](https://creativecommons.org/public-domain/cc0/) and published daily as an open dataset on the Allmaps homepage.
->
-> Other users opening the same map in Allmaps Editor will see the same edits, and will be able to alter and (hopefully!) improve them. Although Allmaps already stores individual edits in the database, you cannot yet easily pin a version or restore a previous version (undo). These functionalities will be added in future versions of Allmaps Editor.
->
-> It is therefore wise to save a copy of your data yourself if you want to keep this specific version.
+<aside class="callout callout-caution" role="note">
+  <p class="callout-title">Caution: Your data in Allmaps</p>
+  <p>Edits in Allmaps Editor are automatically stored in the Allmaps database. They are licensed <a href="https://creativecommons.org/public-domain/cc0/">CC0</a> and published daily as an open dataset on the Allmaps homepage.</p>
+  <p>Other users opening the same map in Allmaps Editor will see the same edits, and will be able to alter and (hopefully!) improve them. Although Allmaps already stores individual edits in the database, you cannot yet easily pin a version or restore a previous version (undo). These functionalities will be added in future versions of Allmaps Editor.</p>
+  <p>It is therefore wise to save a copy of your data yourself if you want to keep this specific version.</p>
+</aside>
 
 - It’s possible to draw multiple masks since an image can depict multiple maps, such as inset map). The active mask can be selected from the **Maps** menu by clicking the shape. After selecting, it will be highlighted with a thicker border, also in the next step.
 
-> [!NOTE]
-> **Existing work**
->
-> If you already see a mask, someone else has previously georeferenced the map. Please check their work and consider improving it. You can also select another map to georeference.
+<aside class="callout callout-note" role="note">
+  <p class="callout-title">Note: Existing work</p>
+  <p>If you already see a mask, someone else has previously georeferenced the map. Please check their work and consider improving it. You can also select another map to georeference.</p>
+</aside>
 
 ### Step 3: Adding Ground Control Points
 
 - Now go to the **Georeference** tab. On the left you see the selected image, on the right a world map. Zoom to the relevant region on the world map. You can easily zoom to a region by holding shift and drawing a box, or by searching for a location by clicking the magnifying glass button. Click a point you recognize on both maps which has remained the same over time, such as a church tower or a road crossing. Add the point on both sides by clicking on the image and map; a number will indicate that they are paired. Add at least three of these points (they are called _control points_). Ideally, they are spread out over the map and do not lay on a straight line.
 
-> [!NOTE]
-> **navPlace**
->
-> If the loaded IIIF Manifest contains a [navPlace](https://iiif.io/api/extension/navplace/) property, this will be used to initiate the map view.
+<aside class="callout callout-note" role="note">
+  <p class="callout-title">Note: navPlace</p>
+  <p>If the loaded IIIF Manifest contains a <a href="https://iiif.io/api/extension/navplace/">navPlace</a> property, this will be used to initiate the map view.</p>
+</aside>
 
 - Open the Maps menu to obtain an overview of your masks and their control points. You can remove points if needed. You can also select another mask and start adding control points for that one. The ordering might change after reloading the page.
 - You can rotate the image and map by holding `crtl` and dragging the respective views.
@@ -96,23 +127,23 @@ Allmaps takes a different approach: it works with IIIF resources which are hoste
 - After creating three or more points, click the **Results** tab. The image is now cropped and rendered on top of the world map. You can zoom and pan this view and use `space` to toggle between image and map. In the menu at the bottom center you can choose to show only the current map, all maps of the current image or all maps in the current resource (which could have multiple images).
 - Open the Maps panel the mask and control points. Next to the map, there’s a dropdown menu with the name Polynomial. This refers to the transformation algorithm used to convert between pixels and geospatial coordinates. You can try changing it to Helmert or Thin plate spline to see if this gives a more satisfactory result.
 
-> [!NOTE]
-> **Transformation algorithms**
->
-> Polynomial uses a homogenous transformation to fit the image on the map (by moving, scaling, rotating and skewing it). This means that the control points might not be rendered in their exact geographical position. Helmert does the same without skewing the image. Thin plate spline respects the location of each control point and will transform the map between those points. This can result in a more distorted image.
+<aside class="callout callout-note" role="note">
+  <p class="callout-title">Note: Transformation algorithms</p>
+  <p>Polynomial uses a homogenous transformation to fit the image on the map (by moving, scaling, rotating and skewing it). This means that the control points might not be rendered in their exact geographical position. Helmert does the same without skewing the image. Thin plate spline respects the location of each control point and will transform the map between those points. This can result in a more distorted image.</p>
+</aside>
 
 - Click the Export button on the top right to inspect the data you have created in the previous steps.
 
-> [!NOTE]
-> **Georeference Annotation**
->
-> This JSON-LD document contains one or more Georeference Annotations. These conform to the specifications of the [Georeference Extension](https://iiif.io/api/extension/georef/), an official extension to the IIIF Presentation API and contain the following parts:
->
-> - A reference to the IIIF Resource that has been annotated under target \> source.
-> - The mask that indicates the location of the map under target \> selector.
-> - The control points and chosen transformation algorithm under body.
->
-> Multiple annotations will be exported as an [Annotation Page](https://www.w3.org/TR/annotation-model/#annotation-page), which contains a list of Georeference Annotations.
+<aside class="callout callout-note" role="note">
+  <p class="callout-title">Note: Georeference Annotation</p>
+  <p>This JSON-LD document contains one or more Georeference Annotations. These conform to the specifications of the <a href="https://iiif.io/api/extension/georef/">Georeference Extension</a>, an official extension to the IIIF Presentation API and contain the following parts:</p>
+  <ul>
+    <li>A reference to the IIIF Resource that has been annotated under target &gt; source.</li>
+    <li>The mask that indicates the location of the map under target &gt; selector.</li>
+    <li>The control points and chosen transformation algorithm under body.</li>
+  </ul>
+  <p>Multiple annotations will be exported as an <a href="https://www.w3.org/TR/annotation-model/#annotation-page">Annotation Page</a>, which contains a list of Georeference Annotations.</p>
+</aside>
 
 - A IIIF Manifest (with multiple images) or a single IIIF Image can contain multiple maps. When viewing or exporting the results, different options are available for exporting annotations of the currently selected map (or mask), the current image, or the entire manifest. The following options can be selected under **Export options for**:
 	- Current map: refers to the current selected mask (and related control points). This selection can be changed in the Maps menu.
