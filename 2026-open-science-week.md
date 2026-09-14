@@ -1,11 +1,13 @@
 ---
-title: Georeferencing Maps
-description: 'Guide for georeferencing maps using Allmaps Editor'
+title: Get ready to use IIIF and Allmaps
+description: Open Science Week 2026 workshop
 ---
+
+Workshop [Get ready to use IIIF and Allmaps](https://www.tudelft.nl/en/events/2026/open-science/get-ready-to-use-iiif-and-allmaps), Sep 14 2026, TU Delft Library.
 
 _NB: This guide will be published as part of the [Allmaps documentation](https://allmaps.org/docs/introduction)._
 
-This guide describes the process of georeferencing a IIIF resource in [Allmaps Editor](https://editor.allmaps.org). It presumes you already have a URL to a IIIF Resource that can be opened in Allmaps. For more information on how to obtain such a URL, please consult the [guide on finding maps](/guides/finding-maps)._
+This guide describes the process of georeferencing a IIIF resource in [Allmaps Editor](https://editor.allmaps.org). It presumes you already have a URL to a IIIF Resource that can be opened in Allmaps. For more information on how to obtain such a URL, please consult the [guide on finding maps](/guides/finding-maps).
 
 ### What is georeferencing?
 
@@ -131,3 +133,23 @@ Allmaps plans to release a tool for keeping track of your georeference maps and 
 - Georeference Annotation URI
 - Georeference Annotation JSON or name and location of downloaded JSON file
 - Notes
+
+## 4TU.ResearchData IIIF Service
+
+Datasets in the [4TU data repository](https://data.4tu.nl/) can be accessed through the IIIF APIs. You can find the link to the IIIF Manifest under the interoperability header in the right side bar. For example:
+
+| Dataset URL | IIIF Presentation API endpoint |
+| --- | --- |
+| `https://data.4tu.nl/datasets/8289a903-7ccf-401b-af66-f5b3c9abe4b6/1` | `https://data.4tu.nl/iiif/v3/8289a903-7ccf-401b-af66-f5b3c9abe4b6/1/manifest` |
+
+Individual Image API endpoints are based on the asset UUIDs:
+
+| File URL | IIIF Image API endpoint |
+| --- | --- |
+| `https://data.4tu.nl/file/8289a903-7ccf-401b-af66-f5b3c9abe4b6/24bcf6b4-c5d5-4e3c-9cc7-3af30607481a` | `https://data.4tu.nl/iiif/v3/8289a903-7ccf-401b-af66-f5b3c9abe4b6/24bcf6b4-c5d5-4e3c-9cc7-3af30607481a` |
+
+For draft datasets, Presentation API endpoints can be accessed as follows; but only after login:
+
+`https://data.4tu.nl/iiif/v3/[uuid]/draft/manifest`
+
+The response could be saved in e.g. a GitHub gist to make it available on the internet without authentication.
