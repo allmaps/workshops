@@ -141,7 +141,7 @@ In the options of the plugin you can also add the following patterns under Manif
 
 ### Institutions
 
-Below is a list of organizations and repositories supporting IIIF. Trailing emojis 🌱 and 🚀 indicate Allmaps Supporters and Innovators as part of the [Allmaps-IIIF Partnership](https://allmaps.org/iiif-partnership).
+Below is a list of organizations and repositories supporting IIIF. Trailing emojis 🌱 and 🚀 respectively indicate Allmaps Supporters and Innovators as part of the [Allmaps-IIIF Partnership](https://allmaps.org/iiif-partnership).
 
 - [4TU.ResearchData](https://data.4tu.nl/)
 - [Austrian Academy of Sciences](https://www.oeaw.ac.at/en/)
@@ -183,10 +183,11 @@ Below is a list of organizations and repositories supporting IIIF. Trailing emoj
 - [Universiteitsbibliotheek Gent](https://lib.ugent.be/en/catalog?access=zoomable&type=map)
 - [Universiteitsbibliotheek Utrecht](https://www.uu.nl/en/utrecht-university-library-special-collections/collections/maps-and-atlases)
 - [Universiteitsbibliotheek VU](https://researchworks.oclc.org/iiif-explorer/search?q=collection.id%3Ahttps%3A%2F%2Fresearchworks.oclc.org%2Fdigital%2Fdataset%2F21033_krt)
-- [Universiteitsbibliotheek van Amsterdam 🌱](https://uvaerfgoed.nl/viewer/search/-/-/1/RELEVANCE/MD_WHAT%3ASingleMap/)
+- [Universiteitsbibliotheek van Amsterdam 🌱](https://uvaerfgoed.nl/)
 - [University of Chicago Library 🌱](https://www.lib.uchicago.edu/collex/collections/)
 - [University of Colorado Boulder](https://scholar.colorado.edu)
 - [University of Groningen](https://dbc.rug.nl/)
+- [Yale Library 🚀](https://collections.library.yale.edu/)
 
 ### Repositories
 
